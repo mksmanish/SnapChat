@@ -7,6 +7,7 @@ const App = () => {
       <View>
         <Text>Apps</Text>
         <Text>manish</Text>
+        <Text>manish</Text>
       </View>
     </SafeAreaView>
   )
