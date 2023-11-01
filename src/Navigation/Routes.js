@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Intail from "../Screens/IntailScreens/Intail";
-import Login from "../Screens/Login/Login";
-import SignUp from "../Screens/SignUp/SignUp";
+import {Intail,Login,SignUp} from "../Screens/index"
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
