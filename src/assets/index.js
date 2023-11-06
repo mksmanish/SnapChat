@@ -1,0 +1,1 @@
+export const snapImage = require("./images/imageSnap.jpg")
