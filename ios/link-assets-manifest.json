@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Barlow-Light.ttf",
+      "sha1": "3b2340ed98714d79c2ddd7fee8120cd4198b971a"
+    },
+    {
+      "path": "src/assets/fonts/Barlow-Medium.ttf",
+      "sha1": "4591d390c34f173e79f71bf9eb682276b6d8bf28"
+    }
+  ]
+}
