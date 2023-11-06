@@ -3,6 +3,7 @@ import React from 'react';
 import {snapImage} from '../../assets';
 import {useNavigation} from '@react-navigation/native';
 import navigationStrings from '../../constants/navigationStrings';
+import colors from '../../assets/styles/colors';
 
 const DashBoard = () => {
   const navigation = useNavigation();
@@ -26,7 +27,7 @@ const DashBoard = () => {
           alignItems: 'center',
         }}>
         <Pressable
-          style={{padding: 20, backgroundColor: 'red', width: '100%'}}
+          style={{padding: 20, backgroundColor: colors.red, width: '100%'}}
           onPress={onPressLogin}>
           <Text
             style={{
@@ -39,7 +40,7 @@ const DashBoard = () => {
           </Text>
         </Pressable>
         <Pressable
-          style={{padding: 20, backgroundColor: 'blue', width: '100%'}}
+          style={{padding: 20, backgroundColor: colors.blue, width: '100%'}}
           onPress={onPressSignUp}>
           <Text
             style={{
