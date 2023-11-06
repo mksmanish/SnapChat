@@ -1,5 +1,5 @@
 export default {
-    INITAIL_SCREEN:"Intail",
+    INITAIL_SCREEN:"DashBoard",
     SIGN_UP:"SignUp",
     LOGIN:"Login"
 }
