@@ -4,6 +4,7 @@ import {snapImage} from '../../assets';
 import {useNavigation} from '@react-navigation/native';
 import navigationStrings from '../../constants/navigationStrings';
 import colors from '../../assets/styles/colors';
+import fontFamily from '../../assets/styles/fontFamily';
 
 const DashBoard = () => {
   const navigation = useNavigation();
@@ -33,8 +34,8 @@ const DashBoard = () => {
             style={{
               textAlign: 'center',
               fontSize: 25,
-              fontWeight: '600',
               color: 'white',
+              fontFamily:fontFamily.regular
             }}>
             Log In
           </Text>
@@ -46,8 +47,8 @@ const DashBoard = () => {
             style={{
               textAlign: 'center',
               fontSize: 25,
-              fontWeight: '600',
               color: 'white',
+              fontFamily:fontFamily.regular
             }}>
             Sign Up
           </Text>
