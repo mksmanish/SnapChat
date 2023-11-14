@@ -6,7 +6,8 @@ import navigationStrings from '../../constants/navigationStrings';
 import colors from '../../assets/styles/colors';
 import fontFamily from '../../assets/styles/fontFamily';
 import { ModerateScale } from 'react-native-size-matters';
-import { textScale } from '../../assets/styles/responsive';
+import { textScale } from '../../assets/styles/responsiveSize';
+import commonStyle from '../../assets/styles/commonStyle';
 
 const DashBoard = () => {
   const navigation = useNavigation();
@@ -33,12 +34,7 @@ const DashBoard = () => {
           style={{padding: 20, backgroundColor: colors.red, width: '100%'}}
           onPress={onPressLogin}>
           <Text
-            style={{
-              textAlign: 'center',
-              fontSize: textScale(25),
-              color: 'white',
-              fontFamily:fontFamily.regular
-            }}>
+           style={styles.textStyle}>
             Log In
           </Text>
         </Pressable>
@@ -46,12 +42,7 @@ const DashBoard = () => {
           style={{padding: 20, backgroundColor: colors.blue, width: '100%'}}
           onPress={onPressSignUp}>
           <Text
-            style={{
-              textAlign: 'center',
-              fontSize: textScale(25),
-              color: 'white',
-              fontFamily:fontFamily.regular
-            }}>
+            style={styles.textStyle}>
             Sign Up
           </Text>
         </Pressable>
@@ -62,4 +53,8 @@ const DashBoard = () => {
 
 export default DashBoard;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  textStyle: {
+    ...commonStyle.fontSize24
+  }
+});

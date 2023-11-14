@@ -34,6 +34,7 @@ export default StyleSheet.create({
         fontSize: textScale(24),
         color: colors.white,
         fontFamily: fontFamily.medium,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        textAlign:"center"
     },
 })
