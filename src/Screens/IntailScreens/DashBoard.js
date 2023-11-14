@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import navigationStrings from '../../constants/navigationStrings';
 import colors from '../../assets/styles/colors';
 import fontFamily from '../../assets/styles/fontFamily';
+import { ModerateScale } from 'react-native-size-matters';
 
 const DashBoard = () => {
   const navigation = useNavigation();
@@ -33,7 +34,7 @@ const DashBoard = () => {
           <Text
             style={{
               textAlign: 'center',
-              fontSize: 25,
+              fontSize: ModerateScale(25),
               color: 'white',
               fontFamily:fontFamily.regular
             }}>
@@ -46,7 +47,7 @@ const DashBoard = () => {
           <Text
             style={{
               textAlign: 'center',
-              fontSize: 25,
+              fontSize: ModerateScale(25),
               color: 'white',
               fontFamily:fontFamily.regular
             }}>
