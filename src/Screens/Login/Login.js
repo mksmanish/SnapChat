@@ -48,7 +48,7 @@ const Login = () => {
           <View style={{marginTop: moderateScale(30)}}>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Text
-                style={{fontSize: 30, fontWeight: '600', color: colors.blue}}>
+                style={{fontSize: 35, fontWeight: '600', color: colors.blue}}>
                 Login
               </Text>
             </View>
@@ -85,10 +85,11 @@ const Login = () => {
           <BtnComp
             btnStyle={{
               ...styles.btnStyle,
-              backgroundColor: isEnable ? colors.green : colors.blue,
+              backgroundColor: isEnable ? colors.blue : colors.gray,
             }}
             textStyle={styles.textStyle}
             btnText={'Login'}
+            isDisable={!!isEnable}
             onPress={onPressLogin}
           />
         </View>

@@ -138,7 +138,7 @@ const SignUp = () => {
             <BtnComp
               btnStyle={{
                 ...styles.btnStyle,
-                backgroundColor: isEnable ? colors.green : colors.blue,
+                backgroundColor: isEnable ? colors.blue : colors.gray,
               }}
               textStyle={styles.textStyle}
               btnText={'Sign Up'}
