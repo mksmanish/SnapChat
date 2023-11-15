@@ -14,6 +14,7 @@ import Strings from '../../constants/language/Strings';
 import {moderateScale} from 'react-native-size-matters';
 import colors from '../../assets/styles/colors';
 import BtnComp from '../../Components/BtnComp';
+import styles from "./styles"
 
 const Login = () => {
   const [state, setState] = useState({
@@ -76,16 +77,6 @@ const Login = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  btnStyle: {
-    borderRadius: moderateScale(25),
-    height: moderateScale(50),
-    backgroundColor: 'gray',
-    marginHorizontal:24
-  },
-  textStyle: {
-    color: colors.white,
-  },
-});
+
 
 export default Login;
