@@ -14,7 +14,7 @@ import Strings from '../../constants/language/Strings';
 import {moderateScale} from 'react-native-size-matters';
 import colors from '../../assets/styles/colors';
 import BtnComp from '../../Components/BtnComp';
-import styles from "./styles"
+import styles from './styles';
 
 const Login = () => {
   const [state, setState] = useState({
@@ -31,11 +31,17 @@ const Login = () => {
   };
   return (
     <View style={{flex: 1, padding: 24}}>
-      <SafeAreaView style={{flex:1}}>
+      <SafeAreaView style={{flex: 1}}>
         <Header />
         <Loader isLoading={false} />
         <View style={{flex: 1, justifyContent: 'space-between'}}>
-          <View>
+          <View style={{marginTop: moderateScale(30)}}>
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Text
+                style={{fontSize: 30, fontWeight: '600', color: colors.blue}}>
+                Login
+              </Text>
+            </View>
             <TextInputWithLabel
               label={'UserName or Email'}
               placeholder={Strings.EMAIL}
@@ -77,6 +83,5 @@ const Login = () => {
     </View>
   );
 };
-
 
 export default Login;
