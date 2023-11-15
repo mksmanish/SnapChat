@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Loader from '../../Components/Loader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../../Components/Header';
@@ -22,13 +22,23 @@ const Login = () => {
     email: '',
     password: '',
     isSecure: true,
+    isEnable: false,
   });
-  const {isLoading, email, password, isSecure} = state;
+  const {isLoading, email, password, isSecure, isEnable} = state;
   const updateState = data => setState(state => ({...state, ...data}));
 
   const onPressLogin = () => {
     console.log(email, password);
   };
+
+  useEffect(() => {
+    if (email !== '' && password !== '') {
+      updateState({isEnable: true});
+      return;
+    }
+    updateState({isEnable: false});
+  }, [email, password]);
+
   return (
     <View style={{flex: 1, padding: 24}}>
       <SafeAreaView style={{flex: 1}}>
@@ -73,7 +83,10 @@ const Login = () => {
           </View>
 
           <BtnComp
-            btnStyle={styles.btnStyle}
+            btnStyle={{
+              ...styles.btnStyle,
+              backgroundColor: isEnable ? colors.green : colors.blue,
+            }}
             textStyle={styles.textStyle}
             btnText={'Login'}
             onPress={onPressLogin}

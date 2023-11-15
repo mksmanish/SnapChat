@@ -6,7 +6,7 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Loader from '../../Components/Loader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../../Components/Header';
@@ -28,10 +28,19 @@ const SignUp = () => {
     lastName: '',
     userName: '',
     isSecure: true,
+    isEnable: false,
   });
   const navigation = useNavigation();
-  const {isLoading, email, password, isSecure, firstName, lastName, userName} =
-    state;
+  const {
+    isLoading,
+    email,
+    password,
+    isSecure,
+    firstName,
+    lastName,
+    userName,
+    isEnable,
+  } = state;
   const updateState = data => setState(state => ({...state, ...data}));
 
   const onPressLogin = () => {
@@ -40,11 +49,26 @@ const SignUp = () => {
   const onPressSignIn = () => {
     navigation.navigate(navigationStrings.LOGIN);
   };
+
+  useEffect(() => {
+    if (
+      email !== '' &&
+      password !== '' &&
+      firstName !== '' &&
+      lastName !== '' &&
+      userName !== ''
+    ) {
+      updateState({isEnable: true});
+      return;
+    }
+    updateState({isEnable: false});
+  }, [email, password, lastName, firstName, userName]);
+
   return (
     <View style={{flex: 1, padding: 24}}>
       <SafeAreaView style={{flex: 1}}>
         <Header />
-        <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+        <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false} automaticallyAdjustKeyboardInsets={true}>
           <View
             style={{
               flex: 1,
@@ -70,7 +94,7 @@ const SignUp = () => {
                 label={'Last Name'}
                 placeholder={Strings.LAST_NAME}
                 value={lastName}
-                onChangeText={lastName => updateState({lastName: value})}
+                onChangeText={value => updateState({lastName: value})}
               />
               <View style={{margin: 10}} />
               <TextInputWithLabel
@@ -112,7 +136,10 @@ const SignUp = () => {
               </TouchableOpacity>
             </View>
             <BtnComp
-              btnStyle={styles.btnStyle}
+              btnStyle={{
+                ...styles.btnStyle,
+                backgroundColor: isEnable ? colors.green : colors.blue,
+              }}
               textStyle={styles.textStyle}
               btnText={'Sign Up'}
               onPress={onPressLogin}
