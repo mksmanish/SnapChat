@@ -26,17 +26,21 @@ const TabRoutes = () => {
             initialRouteName={navigationStrings.CHAT}
             screenOptions={{
                 tabBarShowLabel: true,
-                tabBarStyle: [
-                  {
-                    display: "flex",
-                  },
-                  null,
-                ],
-                tabBarActiveTintColor:"green",
                 tabBarLabelStyle:{
                      fontSize: 12,
-                     fontWeight:"bold"
-                }
+                     fontWeight:"bold",
+                     color:"green"
+                },
+                tabBarStyle: {
+                    height: 60,
+                    paddingHorizontal: 5,
+                    paddingTop: 0,
+                    backgroundColor: 'black',
+                    borderTopWidth: 0,
+                    borderTopRightRadius:15,
+                    borderTopLeftRadius:15
+                },
+               
               }}
         >
              <BottomTab.Screen
@@ -44,7 +48,7 @@ const TabRoutes = () => {
                 component={Chat}
                 options={{
                     tabBarIcon: ({ focused }) => {
-                        return <Image style={{tintColor: focused? colors.green: colors.black,width: 30, height: 30}} source={chat} />
+                        return <Image style={{tintColor: focused? colors.green: colors.white,width: 30, height: 30}} source={chat} />
                     }
                 }}
             />
@@ -53,7 +57,7 @@ const TabRoutes = () => {
                 component={Map}
                 options={{
                     tabBarIcon: ({ focused }) => {
-                        return <Image style={{tintColor: focused? colors.green: colors.black,width: 30, height: 30}} source={map} />
+                        return <Image style={{tintColor: focused? colors.green: colors.white,width: 30, height: 30}} source={map} />
                     }
                 }}
             />
@@ -63,7 +67,7 @@ const TabRoutes = () => {
                 component={Camera}
                 options={{
                     tabBarIcon: ({ focused }) => {
-                        return <Image style={{tintColor: focused? colors.green: colors.black,width: 30, height: 30}} source={camera} />
+                        return <Image style={{tintColor: focused? colors.green: colors.white,width: 30, height: 30}} source={camera} />
                     }
                 }}
             />
@@ -72,7 +76,7 @@ const TabRoutes = () => {
                 component={Stories}
                 options={{
                     tabBarIcon: ({ focused }) => {
-                        return <Image style={{tintColor: focused? colors.green: colors.black, width: 30, height: 30}} source={group} />
+                        return <Image style={{tintColor: focused? colors.green: colors.white, width: 30, height: 30}} source={group} />
                     }
                 }}
             />
